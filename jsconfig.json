@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "commonjs",
+         "experimentalDecorators": true
+    },
+    "files":
+    [
+        "typing/react/react-global.d.ts",
+        "typing/react/react.d.ts",
+        "typing/react/react-dom.d.ts",
+        "typing/react/react-router.d.ts"
+    ]
+}

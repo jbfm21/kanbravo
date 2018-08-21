@@ -1,0 +1,2439 @@
+.invalid {
+    outline-color: orangered !important;
+}
+.loading {
+    color: grey;
+    font-style: italic;
+    cursor: wait;
+}
+
+@mixin top-border-radius($radius) {
+     -webkit-border-top-left-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+     -moz-border-radius-topleft: $radius;
+     -moz-border-radius-topright: 5px;
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+}
+
+@mixin border-radius($radius) {
+    -ms-border-radius:4px;
+    -moz-border-radius:4px;
+    -o-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+}
+
+@mixin fix-height($height) {
+    max-height: $height;
+    height: $height;
+    min-height: $height;
+}
+
+@mixin background-color-mixin($color)
+{
+    background: $color !important; /* Old browsers */
+    background: -moz-linear-gradient(top,  $color 0%, $color 100%)  !important; /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color), color-stop(100%,$color))  !important; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $color 0%,$color 100%)  !important; /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $color 0%,$color 100%)  !important; /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $color 0%,$color 100%)  !important; /* IE10+ */
+    background: linear-gradient(to bottom,  $color 0%,$color 100%)  !important; /* W3C */
+}
+
+@mixin box-shadowm($param1, $param2, $size, $color)
+{
+    box-shadow: $param1 $param2 $size  $color;
+    -moz-box-shadow: $param1 $param2 $size  $color;
+    -webkit-box-shadow: $param1 $param2 $size  $color;
+}
+
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+
+body.pushable
+{
+    @include background-color-mixin(#0C374d );
+}
+
+.pushable
+{
+    @include background-color-mixin(#0C374d);
+}
+
+.pusher
+{
+    @include background-color-mixin(#0C374d);
+}
+
+.boardShowPageMenu
+{
+    width: 100% !important;
+    top: 28px !important;
+}
+
+.k-border
+{
+    &.redBorder
+    {
+        border: 2px solid red;
+    }
+
+    &.yellowBorder
+    {
+        border: 2px solid #898900;
+    }
+
+    &.greenBorder
+    {
+        border: 2px solid green;
+    }
+
+    &.blackBorder
+    {
+        border: 2px solid black;
+    }
+
+
+}
+
+.text
+{
+    &.bold{font-weight: bold;}
+    &.uppercase{text-transform:uppercase;}
+    &.ellipsis{overflow:hidden;-o-text-overflow:ellipsis;-ms-text-overflow:ellipsis;text-overflow:ellipsis;        }
+    &.rotate{-moz-transform:rotate(90deg);-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg);-moz-transform-origin:0% 100%;-webkit-transform-origin:0% 100%;-ms-transform-origin:0% 100%;transform-origin:0% 100%;}
+    &.nowrap{white-space: nowrap;}
+    &.display-linebreak {white-space: pre-line;}
+}
+
+.mouse
+{
+    &.default{cursor: default;}
+    &.pointer{cursor: pointer;}
+}
+
+.k-centered.container
+{
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.k-inlineEdit
+{
+    &.invalid
+    {
+        border: 1px solid red !important;
+    }
+}
+
+.k-size
+{
+    &.k-s20
+    {
+        width:20px !important;
+        height:20px !important;
+    }
+
+    &.k-100percentHeight
+    {
+        height: 100% !important;
+    }
+
+     &.k-90percentHeight
+    {
+        height: 90% !important;
+    }
+
+    &.k-100percent
+    {
+        width: 100% !important;
+    }
+
+    &.k-90percent
+    {
+        width: 90%;
+    }
+
+    &.k-85percent
+    {
+        width: 85%;
+    }
+
+    &.k-70percent
+    {
+        width: 70%;
+    }
+
+
+    &.k-65percent
+    {
+        width: 65%;
+    }
+
+    &.k-60percent
+    {
+        width: 60%;
+    }
+
+    &.k-55percent
+    {
+        width: 55%;
+    }
+
+    &.k-50percent
+    {
+        width: 50%;
+    }
+
+    &.k-30percent
+    {
+        width: 30%;
+    }
+
+    &.k-25percent
+    {
+        width: 25%;
+    }
+
+    &.k-10percent
+    {
+        width: 10%;
+    }
+}
+.k-field
+{
+  &.separator
+  {
+      &.little { margin-left: 5px; }
+      &.medium { margin-left: 20px; }
+  }
+}
+
+.k-richTextEditModal
+{
+    .modal
+    {
+        height: 80% !important;
+        .RichTextEditor__editor___1QqIU
+        {
+            height: 100% !important;
+            .public-DraftEditor-content
+            {
+                height: 90% !important;
+            }
+        }
+    }
+}
+
+.k-principal-container
+{
+    margin-top:20px;
+    .k-title
+    {
+        color:white;
+        text-shadow: 2px 2px black;
+    }
+
+     &.k-fullWidth
+     {
+         width:98% !important;
+         margin-left:5px !important;
+     }
+}
+
+.k-form
+{
+    .tiny-fields-separator
+    {
+        margin-bottom: 10px;
+    }
+    .formToast
+    {
+        margin-bottom: 10px;
+        padding:0px !important;
+    }
+    .form
+    {
+        box-shadow: 2px 2px black;
+    }
+}
+
+.k-text
+{
+    &.center { text-align: center; }
+    &.withScrollBar { overflow-y: auto;}
+}
+
+.card.board
+{
+    box-shadow: 2px 2px 0!important;
+    width: 230px !important;
+    @include fix-height('200px');
+    .content
+    {
+        .header
+        {
+            margin: 0px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .description
+        {
+            color:black !important;
+            max-height: 50px;
+        }
+    }
+}
+
+body
+{
+    @include background-color-mixin(#0C374d);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#356aa0', endColorstr='#356aa0',GradientType=0 ); /* IE6-9 */
+    overflow-x: visible;
+}
+
+.container
+{
+    &.informationMessage
+    {
+        margin-top:100px;
+        &.black
+        {
+            >i
+            {
+                color:black !important;
+            }
+            .header
+            {
+                >span
+                {
+                    color:black !important;
+                }
+            }
+        }
+        >i
+        {
+            margin-top:10px;
+            color:white;
+        }
+        .header
+        {
+            >span
+            {
+                font-size:30px;
+                color:white;
+            }
+        }
+    }
+}
+
+.k-background
+{
+    @include background-color-mixin(#0C374d);
+}
+
+.k-red-background
+{
+    @include background-color-mixin(#67160E);
+}
+
+.k-gold-background
+{
+    @include background-color-mixin(#A75818);
+}
+
+.k-board-setting-menu
+{
+    .menu
+    {
+        background-color: white !important;
+        margin-top: 10px !important;
+    }
+}
+
+.k-card-comment
+{
+    &:hover
+    {
+        .icon { &.remove { display:inline-block !important; } &.edit { display:inline-block !important; }}
+    }
+    .icon { &.remove { display:none; } &.edit { display:none; }}
+
+}
+
+.k-card-comment-form
+{
+    .k-right-bottom-icon { position: absolute; bottom: 36px; right: 60px};
+    &.editableMode
+    {
+        .k-right-bottom-icon { bottom: 24px !important; };
+    }
+
+}
+
+.k-card-blockIcon
+{
+    margin: 0px !important;
+    > i
+    {
+        padding-top: 19%;
+        padding-left: 45%;
+    }
+    &.ui
+    {
+        &.label
+        {
+            > img
+            {
+                left: 10px !important;
+                top: 5px !important;
+                height: 18px !important;
+                width: 18px !important;
+                position: relative !important;
+            }
+        }
+    }
+}
+
+.k-card-assignedMembersIcon
+{
+    margin: 0px !important;
+    > i
+    {
+        font-size: 12px;
+    }
+    > img
+    {
+        height: 18px !important;
+        width: 18px !important;
+    }
+}
+
+.k-board-setting-container
+{
+    .setting.container
+    {
+        margin-top:10px;
+        width: 100%;
+        &.segments
+        {
+            padding: 0px;
+            .header { font-size: 14px !important; margin: 0px !important;}
+            .button { font-size:12px !important; }
+            input { border: 1px dotted gray; @include border-radius('2px'); color:black; font-weight: bold; padding:0.5em; width: inherit !important; }
+            input::-webkit-input-placeholder { color:black;font-weight: bold; }
+            input::-moz-placeholder{ color:black;font-weight:bold; }
+            input:focus { outline: none; border-color: #9ecaed; @include box-shadowm('0', '0' ,'10px', '#4195fc') }
+            textarea { border: 1px dotted gray; padding:0.5em; @include border-radius('2px'); width: inherit }
+            textarea:focus { outline: none; border-color: #9ecaed; @include box-shadowm('0', '0' ,'10px', '#4195fc') }
+            .list { margin-top: 10px !important;}
+            .field.error { input { background-color:  #e0b4b4!important; }}
+            .k-edit-setting
+            {
+                min-height: 320px;
+                .list
+                {
+                    .button { margin-top:10px !important; &.delete { display:none; } &.edit { display:none; }}
+                    &:hover { background-color: #F0F0F0; .button { &.delete { display:inline-block; } &.edit { display:inline-block; }} }
+                }
+            }
+            .k-itemContainer
+            {
+                min-height: 70px;
+                .content
+                {
+                    width: 100%;
+                    .k-textarea { width: 100%; }
+                    .k-input { width: 100%; }
+                    .k-right-bottom-icon { position: absolute; bottom: 25px; right: 25px};
+                }
+            }
+        }
+    }
+}
+
+.topbar
+{
+    &.menu
+    {
+        min-height: 28px;
+        height: 28px;
+        @include border-radius(0px);
+        border-radius: 0px !important;
+        padding-right: auto;
+        padding-left: auto;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 0px !important;
+    }
+}
+
+.borderRadius
+{
+    &.without
+    {
+        border-radius: 0px !important;
+    }
+}
+
+.k-boxShadown
+{
+    padding: 10px 10px 10px 10px;
+    @include border-radius('4px');
+    box-sizing: initial;
+    background:#fff;
+    -ms-box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15);
+    -moz-box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15);
+    -o-box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15);
+    -webkit-box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15);
+    box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15);
+}
+
+.k-combobox
+{
+    &.withoutLayout
+    {
+        select
+        {
+            background: transparent;
+            border: 0;
+            padding:0px;
+            margin:0px;
+            border-radius: 0;
+            -webkit-appearance: none;
+        }
+    }
+}
+
+.k-display-inline
+{
+    display: inline-block !important;
+}
+.k-display-inline-flex
+{
+    display: inline-flex !important;
+}
+.ui.menu
+{
+    .item:before
+    {
+         width:0px !important;
+    }
+}
+.item
+{
+    &.k-compact:before
+    {
+        width:0px !important;
+    }
+    &.k-compact:after
+    {
+        width:0px !important;
+    }
+    &.k-compact
+    {
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+    &.k-bordless
+    {
+        border:0px !important;
+    }
+}
+
+.k-select-avatar-modal
+{
+    .modal
+    {
+        .modal-content
+        {
+            min-width: 300px !important;
+            overflow-y: auto;
+        }
+        height: 80% !important;
+       .column-selected-avatar
+        {
+            text-align: center;
+            width: 15% !important;
+            //margin-right: 40px;
+            //min-width: 15% !important;
+            .k-boxShadown
+            {
+                //width: 200px;
+            }
+        }
+
+        .gridContainer
+        {
+            .gridItem
+            {
+                white-space: nowrap !important;
+                font-weight: normal !important;
+                padding: 5px !important;
+                font-size:14px !important;
+                &.notSelected
+                {
+                    background-color: transparent !important;
+                }
+            }
+            .pagination
+            {
+                margin-top: 20px;
+                border: 0px;
+                box-shadow: 0px 0px 0px 0 rgba(34, 36, 38, 0.15);
+            }
+            .grid
+            {
+                margin-top: 20px;
+                width: 100%;
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+/*******************************
+REACT SELECT USER AUTO COMPLETE
+********************************/
+
+.react-autosuggest__container
+{
+    position: relative;
+    width: 100%;
+}
+
+.react-autosuggest__input
+{
+    border: 1px dotted gray;
+    height: 30px;
+    width: 100%;
+    border-radius: 2px;
+    padding:0.5em;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    color:black;
+    font-weight: bold;
+}
+
+.react-autosuggest__input::-webkit-input-placeholder
+{
+    color:black;
+    font-weight: bold;
+}
+.react-autosuggest__input::-moz-placeholder
+{
+    color:black;
+    font-weight:bold;
+}
+.react-autosuggest__input:focus
+{
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+    -moz-box-shadow: 0px 0px 10px #4195fc;
+    -webkit-box-shadow: 0px 0px 10px #4195fc;
+}
+
+.react-autosuggest__container--open .react-autosuggest__input
+{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container
+{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    z-index: 2;
+}
+
+.react-autosuggest__suggestion
+{
+    cursor: pointer;
+    padding: 2px 0px 0px 2px;
+}
+
+.react-autosuggest__suggestion:not(:first-child)
+{
+    border-top: 1px solid #ddd;
+}
+
+.react-autosuggest__suggestion--focused
+{
+    background-color: #0C374d;
+    color: #fff;
+}
+
+.suggestion-content
+{
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+}
+
+.name
+{
+    margin-left: 68px;
+    line-height: 45px;
+}
+
+.highlight
+{
+    color: #ee0000;
+    font-weight: bold;
+}
+
+.react-autosuggest__suggestion--focused .highlight
+{
+    color: #120000;
+}
+
+/*******************************
+/ REACT SELECT USER AUTO COMPLETE
+********************************/
+.react-selectize.default.root-node .react-selectize-control
+{
+    padding: 0px !important;
+    font-size: 12px !important;
+
+    .simple-value
+    {
+        color: #0C374d !important;
+        border-color: #0C374d !important;
+    }
+}
+.Dropdown__root___3ALmx
+{
+    select
+    {
+        position: relative !important;
+        z-index: 2 !important;
+        display: inline-block !important;
+        box-sizing: border-box !important;
+        height: 30px !important;
+        line-height: inherit !important;
+        font-family: inherit !important;
+        font-size: inherit !important;
+        color: inherit !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 4px solid transparent !important; ;
+        border-right-width: 10px !important;
+        border-left-width: 5px !important;
+        background: none transparent !important;
+        opacity: 1 !important;
+        cursor: pointer !important;
+    }
+}
+
+
+.highlightCardInput .react-selectize.dropdown-menu .groups.as-columns > div {
+    border: 1px solid black;
+    font-size: 10px;
+}
+
+.highlightCardInput .react-selectize.dropdown-menu .option-wrapper {
+  cursor: pointer;
+  outline: none;
+  font-weight: none !important;
+}
+
+.k-rating-with-opacity
+{
+    .k-half-opacity
+    {
+        opacity: 0.4 !important;
+        color: gray !important;
+    }
+
+    .k-full-opacity
+    {
+        opacity: 1 !important;
+        color: black;
+    }
+}
+
+
+.highlightCardInput .react-selectize.dropdown-menu.default .simple-group-title {
+  background-color: lightgoldenrodyellow;
+  border-bottom: 1px solid black;
+  padding: 8px 8px;
+}
+
+.highlightCardInput .react-selectize.dropdown-menu.default .option-wrapper .simple-option {
+  color: #0C374d ;
+  cursor: pointer;
+}
+
+.highlightCardInput .react-selectize.dropdown-menu.default .option-wrapper .simple-option:hover {
+  color: white;
+  background-color: #0C374d;
+  font-weight: normal !important;
+  cursor: pointer;
+}
+
+.highlightCardInput .react-selectize.dropdown-menu {
+  max-height: 400px;
+}
+
+
+
+/*******************************
+/.k-card-timesheet-list-edit
+********************************/
+
+.k-card-timesheet-list-edit
+{
+    tr
+    {
+        .ui.negative.button {opacity: 0 !important;}
+        .ui.cancel.button {opacity: 0 !important;}
+    }
+    tr:hover
+    {
+        .ui.negative.button {opacity: 1 !important;}
+        .ui.cancel.button {opacity: 1 !important;}
+    }
+}
+
+/*******************************
+/.k-card-list-edit
+********************************/
+.k-card-list-edit-title
+{
+	list-style: none;
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    min-height: 30px;
+    max-height: 30px;
+    overflow-y: auto;
+    li
+    {
+        margin-top:10px;
+		line-height: 1.6;
+        font-size: 16px;
+        border-bottom: 1px solid gray;
+        z-index: 100;
+        .ui.grid
+        {
+            margin: 0px !important;
+            .column:not(.row)
+            {
+                padding: 0px !important;
+                margin-top: 0px !important;
+                margin-bottom: 0px !important;
+                margin-left: 10px !important;
+            }
+        }
+    }
+}
+
+.k-card-list-edit-without-height
+{
+	list-style: none;
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    li:first-child
+    {
+        margin-top:10px;
+    }
+    li
+    {
+        &.active
+        {
+            color: red !important;
+            font-weight: bold !important;
+        }
+		line-height: 1.6;
+        font-size: 16px;
+        border-bottom: 1px solid gray;
+        z-index: 100;
+        .ui.grid
+        {
+            margin: 0px !important;
+            .column
+            {
+                .ui.negative.button {display: none !important; height: 31px !important}
+                .ui.cancel.button {display: none !important; height: 31px !important}
+                .edit
+                {
+                    border: 0px;
+                }
+            }
+            .column:not(.row)
+            {
+                padding: 0px !important;
+                margin-top: 0px !important;
+                margin-bottom: 0px !important;
+                margin-left: 10px !important;
+            }
+        }
+        &.completed
+        {
+            .ui.grid
+            {
+                .column
+                {
+                    label
+                    {
+                        color: gray;
+                        text-decoration: line-through;
+                        cursor: pointer;
+                    }
+					div //DIFERENCA TEm em um e nao TEM EM OUTROI
+                    {
+                        color: gray;
+                        text-decoration: line-through;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    li:not(:first-child):hover
+    {
+        background-color: #F0F0F0;
+        .ui.grid
+        {
+            .column
+            {
+                .ui.negative.button {display: block !important;height: 31px !important}
+                .ui.cancel.button {display: block !important;height: 31px !important; padding: 7px !important}
+            }
+        }
+    }
+}
+
+.k-card-list-edit
+{
+	list-style: none;
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    min-height: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+    li:first-child
+    {
+        margin-top:10px;
+    }
+    li
+    {
+        &.active
+        {
+            color: red !important;
+            font-weight: bold !important;
+        }
+		line-height: 1.6;
+        font-size: 16px;
+        border-bottom: 1px solid gray;
+        z-index: 100;
+        .ui.grid
+        {
+            margin: 0px !important;
+            .column
+            {
+                .ui.negative.button {display: none !important; height: 31px !important}
+                .ui.cancel.button {display: none !important; height: 31px !important}
+                .edit
+                {
+                    border: 0px;
+                }
+            }
+            .column:not(.row)
+            {
+                padding: 0px !important;
+                margin-top: 0px !important;
+                margin-bottom: 0px !important;
+                margin-left: 10px !important;
+            }
+        }
+        &.completed
+        {
+            .ui.grid
+            {
+                .column
+                {
+                    label
+                    {
+                        color: gray;
+                        text-decoration: line-through;
+                        cursor: pointer;
+                    }
+					div //DIFERENCA TEm em um e nao TEM EM OUTROI
+                    {
+                        color: gray;
+                        text-decoration: line-through;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    li:not(:first-child):hover
+    {
+        background-color: #F0F0F0;
+        .ui.grid
+        {
+            .column
+            {
+                .ui.negative.button {display: block !important;height: 31px !important}
+                .ui.cancel.button {display: block !important;height: 31px !important; padding: 7px !important}
+            }
+        }
+    }
+}
+
+
+
+/*******************************
+/.Custom scroll
+********************************/
+
+
+.custom-scroll .outer-container {
+  overflow: hidden;
+  position: relative; }
+  .custom-scroll .outer-container:hover .custom-scrollbar {
+    opacity: 1;
+    -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s; }
+
+.custom-scroll .inner-container {
+  overflow-x: hidden;
+  overflow-y: scroll; }
+  .custom-scroll .inner-container:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 0;
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.05) 60%, transparent 100%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.05) 60%, transparent 100%);
+    pointer-events: none;
+    -webkit-transition: height 0.1s ease-in;
+    transition: height 0.1s ease-in;
+    will-change: height; }
+  .custom-scroll .inner-container.content-scrolled:after {
+    height: 5px;
+    -webkit-transition: height 0.15s ease-out;
+    transition: height 0.15s ease-out; }
+
+.custom-scroll.scroll-handle-dragged .inner-container {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.custom-scroll .custom-scrollbar {
+  position: absolute;
+  height: 100%;
+  width: 6px;
+  right: 3px;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition: opacity 0.4s ease-out;
+  transition: opacity 0.4s ease-out;
+  padding: 6px 0;
+  box-sizing: border-box;
+  will-change: opacity; }
+
+.custom-scroll.scroll-handle-dragged .custom-scrollbar {
+  opacity: 1; }
+
+.custom-scroll .custom-scroll-handle {
+  position: absolute;
+  width: 100%;
+  top: 0; }
+
+.custom-scroll .inner-handle {
+  height: calc(100% - 12px);
+  margin-top: 6px;
+  background-color:#0C374d !important;
+  border-radius: 3px; }
+
+
+
+
+/***************GRAFICO ****************/
+.line {
+    fill: none;
+    stroke: #53c79f;
+    stroke-width: 3px;
+
+
+}
+
+.axis {
+    fill: #a3a3a7;
+}
+
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #ececed;
+    shape-rendering: crispEdges;
+
+}
+
+.axis text {
+    font-size: 12px;
+}
+
+.y-grid .tick{
+    stroke: #ececed;
+    opacity: 1;
+}
+
+.y-grid path,
+.y-grid line {
+    fill: none;
+    stroke: #ececed;
+    shape-rendering: crispEdges;
+    opacity: 1;
+
+}
+
+.dot{
+    fill:#FFFFFF;
+    stroke:#53c79f;
+    stroke-width:2px;
+
+}
+
+.area{
+    opacity: .9    ;
+    stroke: #fff;
+    stroke-width:2px;
+}
+
+.tooltip-bg{
+    fill:#000;
+    opacity:0.7;
+}
+
+.tooltip-text1{
+    font-size:15px;
+    fill:#ffffff;
+}
+
+.tooltip-text2{
+    font-size:20px;
+    fill:#a9f3ff;
+}
+
+/*************************
+CONTEXT MENU,
+***************************/
+.react-context-menu {
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 16px;
+    color: black;
+    text-align: left;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    outline: none;
+}
+
+.react-context-menu-link {
+    display: inline-block;
+    width: 100%;
+    padding: 3px 20px;
+    clear: both;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    text-align: inherit;
+    white-space: nowrap;
+    background: 0 0;
+    border: 0;
+}
+
+.react-context-menu-link.active,
+.react-context-menu-link:hover {
+    color: #fff;
+    background-color: #0C374d;
+    border-color: #0C374d;
+    text-decoration: none;
+}
+.react-context-menu-item.submenu > a {
+    padding-right: 27px;
+}
+
+.react-context-menu-item.submenu > a:after {
+    content: "▶";
+    display: inline-block;
+    position: absolute;
+    right: 7px;
+}
+
+/*************************
+Timeline Data card
+***************************/
+.vis-item.green
+{
+      background-color: greenyellow;
+      border-color: red;
+}
+.vis-item.vis-range .vis-item-content
+{
+    padding: 1px;
+    margin-left: 5px;
+}
+
+/*************************
+rbc-calendar
+***************************/
+.rbc-calendar
+{
+    height: 600px !important;
+}
+
+
+/*************************
+fontawasome with calendar text
+***************************/
+.calendar-stack {
+
+    position: relative;
+    font-weight: bold;
+    display: inline-block;
+    width: (13em / 14);
+    height: 1em;
+
+    .fa-calendar-o,
+    .calendar-day {
+        position: absolute;
+    }
+
+    .calendar-day {
+      font-family: arial;
+        top: (7em / 8);
+        left: (1em / 8);
+        width: (11em / 8);
+        height: (6em / 8);
+        font-family: sans-serif;
+        font-size: (8em / 14);
+        font-weight: bold;
+        line-height: (8em / 14);
+        text-align: center;
+    }
+}
+
+
+/******************************
+RESPONSIVE circle
+//http://wpandsuch.com/make-responsive-perfect-circles-with-css/
+*******************************/
+.responsive-circle {
+    font-size: 80px;
+    font-weight: 700;
+    margin: 0 auto 20px;
+    width: 80%;
+}
+.responsive-circle::after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 0;
+    margin-bottom: 20px;
+    padding-bottom: 100%;
+    width: 100%;
+}
+.responsive-circle div {
+    color: white;
+    float: left;
+    line-height: 1em;
+    margin-top: -0.5em;
+    padding-top: 50%;
+    text-align: center;
+    width: 100%;
+}
+
+
+/******************************
+LOADER
+*******************************/
+.loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+
+
+.ui.fullscreen.modal>.close {
+    top: -0.5rem !important;
+    right: 1rem;
+    color:white !important;
+}
+
+.ui.fullscreen.modal
+{
+    width: 99%!important;
+    left: 0.6%!important;
+}
+
+
+.movementTable
+{
+    min-width:1000px;
+    font-size:12px;
+    .movementTableRRow
+    {
+        &.level0
+        {
+            background-color:lightgray;
+            font-weight:bold;
+        }
+        &.level1
+        {
+            font-size:12px;
+            background-color:#E3EAA0;
+        }
+        &.level2
+        {
+            font-size:12px;
+            background-color:#E3EFF0;
+        }
+        &.level3
+        {
+            font-size:10px;
+            background-color:#FFFFFF;
+        }
+        &.level4
+        {
+            font-size:10px;
+            background-color:#FFFFFF;
+        }
+        &.level5
+        {
+            font-size:10px;
+            background-color:#FFFFFF;
+        }
+        &.level6
+        {
+            font-size:10px;
+            background-color:#FFFFFF;
+        }
+
+
+    }
+    .tableData
+    {
+        padding: 2px !important;
+        &.date
+        {
+            min-width:70px;
+            width:70px;
+            max-width:70px;
+        }
+        &.number
+        {
+            min-width:70px;
+            width:70px;
+            max-width:70px;
+        }
+        &.textDate
+        {
+            min-width:130px;
+            width:130px;
+            max-width:130px;
+        }
+        &.title
+        {
+            max-width:150px;
+            width:150px;
+            min-width:150px;
+            &.level1
+            {
+                margin-left: 15px;
+            }
+            &.level2
+            {
+                margin-left: 25px;
+            }
+            &.level3
+            {
+                margin-left: 30px;
+            }
+            &.level4
+            {
+                margin-left: 3-px;
+            }
+            &.level5
+            {
+                margin-left: 30px;
+            }
+        }
+    }
+}
+
+
+
+
+.progress {
+    //height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+    margin: 0px;
+
+    &.progress-bar-notDetailed {
+        background-color: lightgray;
+        font-family: monospace;
+        color: black;
+    }
+
+    &.progress-bar-notStarted {
+        background-color: #CDBFBA;
+        font-family: monospace;
+        color: black;
+    }
+
+    &.progress-bar-started {
+        background-color: #795548;
+        font-family: monospace;
+        color: white;
+    }
+
+    &.progress-bar-finished {
+        background-color: #5cb85c;
+        background-color: #3E2723;
+        font-family: monospace;
+        color: white;
+    }
+}
+
+.progress-bar-notDetailed {
+    background-color: lightgray;
+    font-family: monospace;
+    color: black;
+}
+
+
+.progress-bar-notStarted {
+    background-color: #CDBFBA;
+    font-family: monospace;
+    color: black;
+}
+
+.progress-bar-started {
+    background-color: #795548;
+    font-family: monospace;
+    color: white;
+}
+
+.progress-bar-finished {
+    background-color: #3E2723;
+    font-family: monospace;
+    color: white;
+}
+
+.ui.card.k-connection-statistic-card
+{
+    box-shadow: 0 0px 0px 0 #d4d4d5,0 0 0 0px #d4d4d5;
+    width: 200px;
+    height: 50px;
+    padding: 0px;
+    margin-top: 0px;
+    .content
+    {
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        .ui.header
+        {
+            font-size: 15px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .description
+        {
+            font-size: 17px;
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+}
+
+.ui.segment.clean
+{
+    padding: 0px;
+    margin:0px;
+    box-shadow: 0 0px 0px 0 rgba(34,36,38,.15) !important;
+    border:0px;
+}
+
+//TODO: Duplicado com board.scss  planningDates (um é utilizado na tab para adicionar conexoes e outro nos cartões
+.listCardsToConnectTable
+{
+    .tag
+    {
+        //color:#3C6478;
+        color:#3C6478;
+        font-size: 11px;
+        text-align: left;
+        margin: 0px;
+        padding: 0px;
+        line-height: 1;
+        font-weight: normal;
+        > span
+        {
+            margin-right: 3px;
+        }
+    }
+
+    .cardDateRow
+    {
+        .date
+        {
+            font-size:12px !important;
+            padding:4px !important;
+            font-weight:normal;
+            &.yellow
+            {
+                color:Black !important;
+                background-color: #e6ec88 !important;
+            }
+            &.green
+            {
+                font-weight: normal;
+                background-color:transparent !important;
+                color: gray !important;
+            }
+            &.red
+            {
+                color:white !important;
+                background-color: #ff7f6d !important;
+            }
+            > sup
+            {
+                margin-left:1px;
+            }
+        }
+    }
+}
+
+.chart-pipeline{
+  margin:auto;
+  width: 80vw;
+  height: 25rem;
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.vis-item.vis-background.planningDate {
+      background-color: rgba(255, 0, 0, 0.2);
+    }
+
+
+
+/****************************
+******************************/
+.smallSelect .react-selectize {
+  color: #000;
+}
+.smallSelect .react-selectize.root-node {
+  position: relative;
+  width: 300px;
+}
+.smallSelect .react-selectize.root-node.disabled {
+  pointer-events: none;
+}
+.smallSelect .react-selectize.root-node .react-selectize-control {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -o-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  position: relative;
+  padding: 2px;
+}
+.smallSelect .react-selectize.root-node .react-selectize-control .react-selectize-placeholder {
+  display: block;
+  line-height: 17px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: absolute;
+  max-width: calc(100% - 56px);
+}
+.smallSelect .react-selectize.root-node .react-selectize-control .react-selectize-search-field-and-selected-values {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  min-height: 17px;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.smallSelect .react-selectize.root-node .react-selectize-control .react-selectize-search-field-and-selected-values .resizable-input {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 10px;
+  margin: 2px;
+  padding: 4px 0px;
+  vertical-align: middle;
+  width: 0px;
+}
+.smallSelect .react-selectize.root-node .react-selectize-control .react-selectize-search-field-and-selected-values .value-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.smallSelect .react-selectize.root-node .react-selectize-control .react-selectize-reset-button-container,
+.smallSelect .react-selectize.root-node .react-selectize-control .react-selectize-toggle-button-container {
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -o-box-flex: 0;
+  -ms-box-flex: 0;
+  box-flex: 0;
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 17px;
+}
+.smallSelect .react-selectize.root-node .react-selectize-control .react-selectize-reset-button-container {
+  width: 16px;
+  height: 20px
+}
+.smallSelect .react-selectize.root-node .react-selectize-control .react-selectize-toggle-button-container {
+  width: 32px;
+  height: 20px
+}
+.smallSelect .react-selectize.root-node .react-selectize-control .react-selectize-reset-button-container:hover .react-selectize-reset-button path {
+  stroke: #c0392b;
+}
+.smallSelect .react-selectize.root-node .react-selectize-control .react-selectize-reset-button path {
+  -webkit-transition: stroke 0.5s 0s ease;
+  -moz-transition: stroke 0.5s 0s ease;
+  -o-transition: stroke 0.5s 0s ease;
+  -ms-transition: stroke 0.5s 0s ease;
+  transition: stroke 0.5s 0s ease;
+  stroke: #999;
+  stroke-linecap: square;
+  stroke-linejoin: mitter;
+}
+.smallSelect .react-selectize.root-node .react-selectize-control .react-selectize-toggle-button path {
+  fill: #999;
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper {
+  position: absolute;
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper.tethered {
+  min-width: 300px;
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper:not(.tethered) {
+  width: 100%;
+}
+.smallSelect .react-selectize.dropdown-menu {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: auto;
+  position: absolute;
+  max-height: 200px;
+  z-index: 10;
+}
+.smallSelect .react-selectize.dropdown-menu.tethered {
+  min-width: 300px;
+}
+.smallSelect .react-selectize.dropdown-menu:not(.tethered) {
+  width: 100%;
+}
+.smallSelect .react-selectize.dropdown-menu .groups.as-columns {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+}
+.smallSelect .react-selectize.dropdown-menu .groups.as-columns > div {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.smallSelect .react-selectize.dropdown-menu .option-wrapper {
+  cursor: pointer;
+  outline: none;
+}
+.smallSelect .multi-select.react-selectize.root-node .simple-value {
+  display: inline-block;
+  margin: 2px;
+  vertical-align: middle;
+}
+.smallSelect .multi-select.react-selectize.root-node .simple-value span {
+  display: inline-block;
+  padding: 2px 5px 4px;
+  vertical-align: center;
+}
+.smallSelect .simple-select.react-selectize.root-node .simple-value {
+  margin: 2px;
+}
+.simple-select.react-selectize.root-node .simple-value span {
+  display: inline-block;
+  vertical-align: center;
+}
+.smallSelect .react-selectize.default {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.smallSelect .react-selectize.default.root-node .react-selectize-control {
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #d9d9d9 #ccc #b3b3b3;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  font-size: 10px;
+}
+.smallSelect .react-selectize.default.root-node .react-selectize-control .react-selectize-placeholder {
+  color: #aaa;
+  text-indent: 8px;
+  font-size: 10px;
+  margin-top: 3px;
+}
+.smallSelect .react-selectize.default.root-node .react-selectize-control .react-selectize-search-field-and-selected-values {
+  padding-left: 5px;
+  font-size: 10px;
+}
+.smallSelect .react-selectize.default.root-node.open.flipped .react-selectize-control {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.smallSelect .react-selectize.default.root-node.open:not(.flipped) .react-selectize-control {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper.default {
+  overflow: hidden;
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.custom-enter-active,
+.smallSelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.custom-leave-active {
+  -webkit-transition: -webkit-transform 0.2s 0s ease;
+  -moz-transition: -moz-transform 0.2s 0s ease;
+  -o-transition: -o-transform 0.2s 0s ease;
+  -ms-transition: -ms-transform 0.2s 0s ease;
+  transition: transform 0.2s 0s ease;
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.flipped.custom-enter {
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.flipped.custom-enter-active {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.flipped.custom-leave {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.flipped.custom-leave-active {
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu:not(.flipped).custom-enter {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu:not(.flipped).custom-enter-active {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu:not(.flipped).custom-leave {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.smallSelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu:not(.flipped).custom-leave-active {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.smallSelect .react-selectize.dropdown-menu.default {
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-top: -1px;
+}
+.smallSelect .react-selectize.dropdown-menu.default.flipped {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.smallSelect .react-selectize.dropdown-menu.default:not(.flipped) {
+  border-color: #b3b3b3 #ccc #d9d9d9;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.smallSelect .react-selectize.dropdown-menu.default .no-results-found {
+  color: #aaa !important;
+  font-style: oblique;
+  padding: 8px 10px;
+}
+.smallSelect .react-selectize.dropdown-menu.default .simple-group-title {
+  background-color: #fafafa;
+  padding: 8px 8px;
+}
+.smallSelect .react-selectize.dropdown-menu.default .option-wrapper.highlight {
+  background: #f2f9fc;
+  color: #333;
+}
+.smallSelect .react-selectize.dropdown-menu.default .option-wrapper .simple-option {
+  color: #666;
+  cursor: pointer;
+  padding: 8px 10px;
+}
+.smallSelect .react-selectize.dropdown-menu.default .option-wrapper .simple-option.not-selectable {
+  background-color: #f8f8f8;
+  color: #999;
+  cursor: default;
+  font-style: oblique;
+  text-shadow: 0px 1px 0px #fff;
+}
+.smallSelect .multi-select.react-selectize.default.root-node .simple-value {
+  background: #f2f9fc;
+  border: 1px solid #c9e6f2;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #08c;
+}
+.smallSelect .simple-select.react-selectize.default.root-node.open .react-selectize-control {
+  background-color: #fff;
+}
+.smallSelect .simple-select.react-selectize.default.root-node:not(.open) .react-selectize-control {
+  background-color: #f9f9f9;
+  background-image: -webkit-linear-gradient(top, #fefefe, #f2f2f2);
+  background-image: -moz-linear-gradient(top, #fefefe, #f2f2f2);
+  background-image: -o-linear-gradient(top, #fefefe, #f2f2f2);
+  background-image: -ms-linear-gradient(top, #fefefe, #f2f2f2);
+  background-image: linear-gradient(to bottom, #fefefe, #f2f2f2);
+}
+.listCardsToConnectTable .ui.compact.table td
+{
+    font-size: 11px;
+    font-family: monospace;
+}
+.detailStatistic
+{
+    .ui.compact.table
+    {
+        .root td
+        {
+            background-color: orange;
+        }
+        .childTable td
+        {
+            background-color: lightgoldenrodyellow;
+        }
+    }
+    .ui.compact.table td
+    {
+        padding: 0px;
+        border: 1px solid black;
+    }
+
+    .ui.compact.table th
+    {
+        padding: 0px;
+        border: 1px solid black;
+    }
+
+}
+.statisticGanttBar
+{
+    .vis-item.vis-range .vis-item-content
+    {
+        width: 100%;
+        margin-left: 0px;
+        display: inline;
+        padding: 0px;
+    }
+}
+
+.ButtonWrap__root___1EO_R
+{
+    z-index: 0 !important;
+}
+
+.RichTextEditor__editor___1QqIU
+{
+    cursor: auto !important;
+    font-size: 12px !important;
+}
+
+
+/***************************************************************/
+//RICHEDIT
+/***************************************************************/
+.richedittext-wrapper {
+  width: 99%;
+  display: block;
+  margin-bottom: 0px;
+  height: 420px;
+}
+
+
+.richedittext-wrapper-large {
+  width: 99%;
+  display: block;
+  margin-bottom: 0px;
+  height: 540px;
+}
+
+
+.richedittext-wrapper-long {
+  width: 99%;
+  display: block;
+  margin-bottom: 0px;
+  height: 500px;
+}
+
+.richedittext-editor {
+  height: 86%;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.richedittext-wrapper-modal {
+  width: 99%;
+  display: block;
+  margin-bottom: 0px;
+  height: 100%;
+}
+
+.richedittext-editor-modal {
+  height: 90%;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.richedittext-toolbar {
+  width: 100%;
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+  font-size: 12px !important;
+  border: 0px solid black !important;
+
+}
+
+.bordered-option-classname {
+  border: 1px solid #e3e3e3;
+}
+
+
+/***************************************************************/
+.tinySelect .react-selectize {
+  color: #000;
+}
+.tinySelect .react-selectize.root-node {
+  position: relative;
+  width: 300px;
+}
+.tinySelect .react-selectize.root-node.disabled {
+  pointer-events: none;
+}
+.tinySelect .react-selectize.root-node .react-selectize-control {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -o-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  position: relative;
+  padding: 2px;
+}
+.tinySelect .react-selectize.root-node .react-selectize-control .react-selectize-placeholder {
+  display: block;
+  line-height: 17px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: absolute;
+  max-width: calc(100% - 56px);
+}
+.tinySelect .react-selectize.root-node .react-selectize-control .react-selectize-search-field-and-selected-values {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  min-height: 17px;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.tinySelect .react-selectize.root-node .react-selectize-control .react-selectize-search-field-and-selected-values .resizable-input {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  margin: 2px;
+  padding: 4px 0px;
+  vertical-align: middle;
+  width: 0px;
+}
+.tinySelect .react-selectize.root-node .react-selectize-control .react-selectize-search-field-and-selected-values .value-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.tinySelect .react-selectize.root-node .react-selectize-control .react-selectize-reset-button-container,
+.tinySelect .react-selectize.root-node .react-selectize-control .react-selectize-toggle-button-container {
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -o-box-flex: 0;
+  -ms-box-flex: 0;
+  box-flex: 0;
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 17px;
+}
+
+.tinySelect .react-selectize-toggle-button-container {
+    margin-top: 3px;
+}
+
+.tinySelect .react-selectize-reset-button-container
+{
+    margin-top: 3px;
+}
+
+.tinySelect .react-selectize.root-node .react-selectize-control .react-selectize-reset-button-container {
+  width: 16px;
+  height: 20px;
+}
+.tinySelect .react-selectize.root-node .react-selectize-control .react-selectize-toggle-button-container {
+  width: 32px;
+  height: 20px
+}
+.tinySelect .react-selectize.root-node .react-selectize-control .react-selectize-reset-button-container:hover .react-selectize-reset-button path {
+  stroke: #c0392b;
+}
+.tinySelect .react-selectize.root-node .react-selectize-control .react-selectize-reset-button path {
+  -webkit-transition: stroke 0.5s 0s ease;
+  -moz-transition: stroke 0.5s 0s ease;
+  -o-transition: stroke 0.5s 0s ease;
+  -ms-transition: stroke 0.5s 0s ease;
+  transition: stroke 0.5s 0s ease;
+  stroke: #999;
+  stroke-linecap: square;
+  stroke-linejoin: mitter;
+}
+.tinySelect .react-selectize.root-node .react-selectize-control .react-selectize-toggle-button path {
+  fill: #999;
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper {
+  position: absolute;
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper.tethered {
+  min-width: 300px;
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper:not(.tethered) {
+  width: 100%;
+}
+.tinySelect .react-selectize.dropdown-menu {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: auto;
+  position: absolute;
+  max-height: 200px;
+  z-index: 10;
+}
+.tinySelect .react-selectize.dropdown-menu.tethered {
+  min-width: 300px;
+}
+.tinySelect .react-selectize.dropdown-menu:not(.tethered) {
+  width: 100%;
+}
+.tinySelect .react-selectize.dropdown-menu .groups.as-columns {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+}
+.tinySelect .react-selectize.dropdown-menu .groups.as-columns > div {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.tinySelect .react-selectize.dropdown-menu .option-wrapper {
+  cursor: pointer;
+  outline: none;
+}
+.tinySelect .multi-select.react-selectize.root-node .simple-value {
+  display: inline-block;
+  margin: 2px;
+  vertical-align: middle;
+}
+.tinySelect .multi-select.react-selectize.root-node .simple-value span {
+  display: inline-block;
+  padding: 2px 5px 4px;
+  vertical-align: center;
+}
+.tinySelect .simple-select.react-selectize.root-node .simple-value {
+  margin: 2px;
+}
+.simple-select.react-selectize.root-node .simple-value span {
+  display: inline-block;
+  vertical-align: center;
+}
+.tinySelect .react-selectize.default {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.tinySelect .react-selectize.default.root-node .react-selectize-control {
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #d9d9d9 #ccc #b3b3b3;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  font-size: 12px;
+}
+.tinySelect .react-selectize.default.root-node .react-selectize-control .react-selectize-placeholder {
+  color: #aaa;
+  text-indent: 8px;
+  font-size: 12px;
+  margin-top: 6px;
+}
+.tinySelect .react-selectize.default.root-node .react-selectize-control .react-selectize-search-field-and-selected-values {
+  padding-left: 5px;
+  font-size: 12px;
+}
+.tinySelect .react-selectize.default.root-node.open.flipped .react-selectize-control {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.tinySelect .react-selectize.default.root-node.open:not(.flipped) .react-selectize-control {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper.default {
+  overflow: hidden;
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.custom-enter-active,
+.tinySelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.custom-leave-active {
+  -webkit-transition: -webkit-transform 0.2s 0s ease;
+  -moz-transition: -moz-transform 0.2s 0s ease;
+  -o-transition: -o-transform 0.2s 0s ease;
+  -ms-transition: -ms-transform 0.2s 0s ease;
+  transition: transform 0.2s 0s ease;
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.flipped.custom-enter {
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.flipped.custom-enter-active {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.flipped.custom-leave {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu.flipped.custom-leave-active {
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu:not(.flipped).custom-enter {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu:not(.flipped).custom-enter-active {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu:not(.flipped).custom-leave {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.tinySelect .react-selectize.dropdown-menu-wrapper.default .dropdown-menu:not(.flipped).custom-leave-active {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.tinySelect .react-selectize.dropdown-menu.default {
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-top: -1px;
+}
+.tinySelect .react-selectize.dropdown-menu.default.flipped {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.tinySelect .react-selectize.dropdown-menu.default:not(.flipped) {
+  border-color: #b3b3b3 #ccc #d9d9d9;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.tinySelect .react-selectize.dropdown-menu.default .no-results-found {
+  color: #aaa !important;
+  font-style: oblique;
+  padding: 8px 10px;
+}
+.tinySelect .react-selectize.dropdown-menu.default .simple-group-title {
+  background-color: #fafafa;
+  padding: 8px 8px;
+}
+.tinySelect .react-selectize.dropdown-menu.default .option-wrapper.highlight {
+  background: #f2f9fc;
+  color: #333;
+}
+.tinySelect .react-selectize.dropdown-menu.default .option-wrapper .simple-option {
+  color: #666;
+  cursor: pointer;
+  padding: 8px 10px;
+}
+.tinySelect .react-selectize.dropdown-menu.default .option-wrapper .simple-option.not-selectable {
+  background-color: #f8f8f8;
+  color: #999;
+  cursor: default;
+  font-style: oblique;
+  text-shadow: 0px 1px 0px #fff;
+}
+.tinySelect .multi-select.react-selectize.default.root-node .simple-value {
+  background: #f2f9fc;
+  border: 1px solid #c9e6f2;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #08c;
+}
+.tinySelect .simple-select.react-selectize.default.root-node.open .react-selectize-control {
+  background-color: #fff;
+}
+.tinySelect .simple-select.react-selectize.default.root-node:not(.open) .react-selectize-control {
+  background-color: #f9f9f9;
+  background-image: -webkit-linear-gradient(top, #fefefe, #f2f2f2);
+  background-image: -moz-linear-gradient(top, #fefefe, #f2f2f2);
+  background-image: -o-linear-gradient(top, #fefefe, #f2f2f2);
+  background-image: -ms-linear-gradient(top, #fefefe, #f2f2f2);
+  background-image: linear-gradient(to bottom, #fefefe, #f2f2f2);
+}

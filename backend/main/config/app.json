@@ -1,0 +1,243 @@
+{
+    "default":
+    {
+       "messages": {"genericErrorMessage": "Ops, foi mal, mas aconteceu algum erro que não soube tratar. Por favor, tente novamente."}
+    },
+
+     "production_docker":
+     {
+        "environment_docker": "production",
+        "restServer": {"port": 3000, "ipAddress": "127.0.0.1"},
+        "restServerHttps": {"port": 3001, "ipAddress": "127.0.0.1", "key": "D:\\kb\\backend\\main\\config\\HTTPS.key", "certificate":"D:\\kb\\backend\\main\\config\\HTTPS.cert"},
+        "db": {"mongodb": "mongodb://mongo:27017/qkanban"},
+		"token": "`ykdzuD.$Ppr!%9;&~A%#P!aW;ucIWRi}wb.FvoP<Gj}DCH_E)}5PGD@*N5n1#",
+		"keyPath": "d:/tmp/serviceKey.key",
+		"ldap": {
+ 				"url": "ldap://ldap.forumsys.com:389",
+                "bindDn": "cn=read-only-admin,dc=example,dc=com",
+                "bindCredentials": "password",
+                "searchBase": "dc=example,dc=com",
+                "searchFilter": "uid={{username}}",
+				"searchFilterOutro": "sAMAccountName={{username}}",
+                "searchAttributes": "",
+				"givennameField": "givenName",
+				"surnameField": "sn",
+				"emailField": "mail",
+				"loginField": "uid"
+		},
+		"services":
+		{
+			"clearquest": {
+				"login": "kanbravo",
+				"password": "cf593fa74d9a3c367ac0"
+			}
+		},
+		"directories":
+		{
+			"staticFolder":"/usr/data/",
+			"baseFilePath": "/usr/data/",
+			"tempUploadDir": " /usr/tmp/restify/",
+			"tempExportDir": " /usr/tmp/export",
+			"imageDir": "/usr/data/images",
+            "relativeImageDir": "/images/",
+			"attachmentDir": "/usr/data/attachments/",
+            "relativeAttachmentDir": "/attachments/"
+		},
+		"logger": {
+            "level": "info",
+			"api": "/usr/logs/qkanban-api.log",
+			"app": "/usr/logs/qkanban-app.log",
+			"exception": "/usr/logs/qkanban-exceptions.log",
+			"audit": "/usr/logs/qkanban-audit.log"
+		}
+	},
+
+    "production":
+     {
+        "environment": "production",
+        "restServer": {"port": 8080, "ipAddress": "127.3.122.129"},
+		"restServerHttps": {"port": 3001, "ipAddress": "127.3.122.129", "key": "D:\\kb\\backend\\main\\config\\HTTPS.key", "certificate":"D:\\kb\\backend\\main\\config\\HTTPS.cert"},
+        "db": {"mongodb": "mongodb://127.3.122.130:27017/qkanban"},
+		"token": "`ykdzuD.$Ppr!%9;&~A%#P!aW;ucIWRi}wb.FvoP<Gj}DCH_E)}5PGD@*N5n1#",
+		"keyPath": "d:/tmp/serviceKey.key",
+		"ldap": {
+ 				"url": "ldap://ldap.forumsys.com:389",
+                "bindDn": "cn=read-only-admin,dc=example,dc=com",
+                "bindCredentials": "password",
+                "searchBase": "dc=example,dc=com",
+                "searchFilter": "uid={{username}}",
+				"searchFilterOutro": "sAMAccountName={{username}}",
+                "searchAttributes": "",
+				"givennameField": "givenName",
+				"surnameField": "sn",
+				"emailField": "mail",
+				"loginField": "uid"
+		},
+		"services":
+		{
+			"clearquest": {
+				"login": "kanbravo",
+				"password": "cf593fa74d9a3c367ac0"
+			}
+		},
+		"directories":
+		{
+			"staticFolder":"/var/lib/openshift/5763477d2d527163d90001d6/app-root/data/",
+			"baseFilePath": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/data/",
+			"tempUploadDir": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/data/tmp/",
+			"tempExportDir": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/data/tmp/export",
+			"imageDir": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/data/images",
+            "relativeImageDir": "http://bravo-qkanban.rhcloud.com/images/",
+			"attachmentDir": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/data/attachments",
+            "relativeAttachmentDir": "/attachments/"
+		},
+		"logger": {
+            "level": "info",
+			"api": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/logs/qkanban-api.log",
+			"app": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/logs/qkanban-app.log",
+			"exception": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/logs/qkanban-exceptions.log",
+			"audit": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/logs/qkanban-audit.log"
+		}
+	},
+ 	"production_local":
+    {
+        "environment": "production",
+        "restServer": {"port": 3000, "ipAddress": "127.0.0.1"},
+        "restServerHttps": {"port": 3001, "ipAddress": "127.0.0.1", "key": "D:\\kb\\backend\\main\\config\\HTTPS.key", "certificate":"D:\\kb\\backend\\main\\config\\HTTPS.cert"},
+        "db": {"mongodb": "mongodb://localhost:8700/qkanban"},
+		"token": "`ykdzuD.$Ppr!%9;&~A%#P!aW;ucIWRi}wb.FvoP<Gj}DCH_E)}5PGD@*N5n1#",
+		"keyPath": "d:/tmp/serviceKey.key",
+		"ldap": {
+ 				"url": "ldap://ldap.forumsys.com:389",
+                "bindDn": "cn=read-only-admin,dc=example,dc=com",
+                "bindCredentials": "password",
+                "searchBase": "dc=example,dc=com",
+                "searchFilter": "uid={{username}}",
+				"searchFilterOutro": "sAMAccountName={{username}}",
+                "searchAttributes": "",
+				"givennameField": "givenName",
+				"surnameField": "sn",
+				"emailField": "mail",
+				"loginField": "uid"
+		},
+		"services":
+		{
+			"clearquest": {
+				"login": "kanbravo",
+				"password": "cf593fa74d9a3c367ac0"
+			}
+		},
+		"directories":
+		{
+			"staticFolder": "D:\\kb\\tmp\\deploy\\frontend",
+			"baseFilePath": "D:\\kb\\tmp\\deploy\\frontend",
+			"tempUploadDir": "D:\\kb\\tmp\\restify\\prd",
+			"tempExportDir": "D:\\kb\\tmp\\export\\prd",
+			"imageDir": "D:\\kb\\tmp\\deploy\\frontend\\images\\",
+            "relativeImageDir": "/images/",
+			"attachmentDir": "D:\\kb\\tmp\\deploy\\frontend\\attachments\\",
+            "relativeAttachmentDir": "/attachments/"
+		},
+		"logger": {
+            "level": "info",
+			"api": "d:/kb/tmp/logs/prd/api.log",
+			"app": "d:/kb/tmp/logs/prd/app.log",
+			"exception": "d:/kb/tmp/logs/prd/exceptions.log",
+			"audit": "d:/kb/tmp/logs/prd/audit.log"
+		}
+	},
+	"test":
+	{
+        "environment": "test",
+        "restServer": {"port": 3000, "ipAddress": "127.0.0.1"},
+        "restServerHttps": {"port": 3001, "ipAddress": "127.0.0.1", "key": "D:\\kb\\backend\\main\\config\\HTTPS.key", "certificate":"D:\\kb\\backend\\main\\config\\HTTPS.cert"},
+        "db": {"mongodb": "mongodb://localhost:8700/qkanban-test"},
+		"token": "`ykdzuD.$Ppr!%9;&~A%#P!aW;ucIWRi}wb.FvoP<Gj}DCH_E)}5PGD@*N5n1#",
+		"keyPath": "d:/tmp/serviceKey.key",
+		"ldap": {
+ 				"url": "ldap://ldap.forumsys.com:389",
+                "bindDn": "cn=read-only-admin,dc=example,dc=com",
+                "bindCredentials": "password",
+                "searchBase": "dc=example,dc=com",
+                "searchFilter": "uid={{username}}",
+				"searchFilterOutro": "sAMAccountName={{username}}",
+                "searchAttributes": "",
+				"givennameField": "givenName",
+				"surnameField": "sn",
+				"emailField": "mail",
+				"loginField": "uid"
+		},
+		"services":
+		{
+			"clearquest": {
+				"login": "kanbravo",
+				"password": "cf593fa74d9a3c367ac0"
+			}
+		},
+		"directories":
+		{
+			"staticFolder":"D:\\kb\\tmp\\deploy\\frontend",
+			"baseFilePath": "D:\\kb\\tmp\\deploy\\frontend",
+			"tempUploadDir": "D:\\kb\\tmp\\restify\\test",
+			"tempExportDir": "D:\\kb\\tmp\\export\\test",
+			"imageDir": "D:\\kb\\tmp\\deploy\\frontend\\images\\",
+            "relativeImageDir": "/images/",
+			"attachmentDir": "D:\\kb\\tmp\\deploy\\frontend\\attachments\\",
+            "relativeAttachmentDir": "/attachments/"
+		},
+		"logger": {
+            "level": "info",
+			"api": "d:/kb/tmp/logs/test/api.log",
+			"app": "d:/kb/tmp/logs/test/app.log",
+			"exception": "d:/kb/tmp/logs/test/exceptions.log",
+			"audit": "d:/kb/tmp/logs/test/audit.log"
+		}
+	},
+	"development":
+	{
+        "environment": "dev",
+        "restServer": {"port": 3000, "ipAddress": "127.0.0.1"},
+        "restServerHttps": {"port": 3001, "ipAddress": "127.0.0.1", "key": "D:\\kb\\backend\\main\\config\\HTTPS.key", "certificate":"D:\\kb\\backend\\main\\config\\HTTPS.cert"},
+        "db": {"mongodb": "mongodb://madmin:qKan3an953@localhost:8700/qkanban?authSource=admin"},
+		"token": "`ykdzuD.$Ppr!%9;&~A%#P!aW;ucIWRi}wb.FvoP<Gj}DCH_E)}5PGD@*N5n1#",
+		"keyPath": "d:/tmp/serviceKey.key",
+		"ldap": {
+ 				"url": "ldap://ldap.forumsys.com:389",
+                "bindDn": "cn=read-only-admin,dc=example,dc=com",
+                "bindCredentials": "password",
+                "searchBase": "dc=example,dc=com",
+                "searchFilter": "uid={{username}}",
+				"searchFilterOutro": "sAMAccountName={{username}}",
+                "searchAttributes": "",
+				"givennameField": "cn",
+				"surnameField": "sn",
+				"emailField": "mail",
+				"loginField": "uid"
+		},
+		"services":
+		{
+			"clearquest": {
+				"login": "kanbravo",
+				"password": "cf593fa74d9a3c367ac0"
+			}
+		},
+		"directories":
+		{
+			"staticFolder": "D:\\kb\\tmp\\deploy\\frontend",
+			"baseFilePath": "D:\\kb\\tmp\\deploy\\frontend",
+			"tempUploadDir": "D:\\kb\\tmp\\restify\\dev",
+			"tempExportDir": "D:\\kb\\tmp\\export\\dev",
+			"imageDir": "D:\\kb\\tmp\\deploy\\frontend\\images\\",
+            "relativeImageDir": "/images/",
+			"attachmentDir": "D:\\kb\\tmp\\deploy\\frontend\\attachments\\",
+            "relativeAttachmentDir": "/attachments/"
+		},
+		"logger": {
+            "level": "debug",
+			"api": "d:/kb/tmp/logs/dev/api.log",
+			"app": "d:/kb/tmp/logs/dev/app.log",
+			"exception": "d:/kb/tmp/logs/dev/exceptions.log",
+			"audit": "d:/kb/tmp/logs/dev/audit.log"
+		}
+	}
+}

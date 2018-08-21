@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Rating</title>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- React -->
+    <script src="node_modules/react/dist/react.js"></script>
+    <!-- React Rating component -->
+    <script src="lib/react-rating.js"></script>
+    <!-- SVG icons generated with https://icomoon.io/app/ -->
+    <svg id="svg-source" style="display: none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="icon-star-empty" viewBox="0 0 1024 1024">
+          <title>star-empty</title>
+          <path class="path1" d="M1024 397.050l-353.78-51.408-158.22-320.582-158.216 320.582-353.784 51.408 256 249.538-60.432 352.352 316.432-166.358 316.432 166.358-60.434-352.352 256.002-249.538zM512 753.498l-223.462 117.48 42.676-248.83-180.786-176.222 249.84-36.304 111.732-226.396 111.736 226.396 249.836 36.304-180.788 176.222 42.678 248.83-223.462-117.48z"></path>
+        </symbol>
+        <symbol id="icon-star-full" viewBox="0 0 1024 1024">
+          <title>star-full</title>
+          <path class="path1" d="M1024 397.050l-353.78-51.408-158.22-320.582-158.216 320.582-353.784 51.408 256 249.538-60.432 352.352 316.432-166.358 316.432 166.358-60.434-352.352 256.002-249.538z"></path>
+        </symbol>
+      </defs>
+    </svg>
+    <style type="text/css">
+      .low {
+        color: red;
+      }
+      .medium {
+        color: orange;
+      }
+      .high {
+        color: green;
+      }
+      .icon {
+        width: 26px;
+        height: 26px;
+      }
+      .icon-text {
+        display: inline-block;
+        width: 26px;
+        font-size: 2em;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Default rating</h3>
+    <div class="rating" id="rating-default"></div>
+    <h3>Readonly rating</h3>
+    <div class="rating" id="rating-default-readonly"></div>
+    <h3>Readonly fractional rating</h3>
+    <div class="rating" id="rating-default-readonly-fractional"></div>
+    <h3>React svg element rating</h3>
+    <div class="rating" id="rating-svg"></div>
+    <h3>React span element rating</h3>
+    <div class="rating" id="rating-span"></div>
+    <h3>React img element rating</h3>
+    <div class="rating" id="rating-img"></div>
+    <h3>Fontawesome Five Star rating</h3>
+    <div class="rating" id="rating-fontawesome-star"></div>
+    <h3>Bootstrap Five Heart rating</h3>
+    <div class="rating" id="rating-bootstrap-heart"></div>
+    <h3>Fractional rating</h3>
+    <div class="rating" id="rating-fractional"></div>
+    <h3>Alert when rate changes</h3>
+    <div class="rating" id="rating-default-change"></div>
+    <h3>Update a label when rate moves</h3>
+    <span class="rating" id="rating-default-onrate"></span>
+    <span class="label label-default" id="label-onrate"></span>
+    <h3>Colored rating</h3>
+    <span class="rating" id="rating-colored"></span>
+    <h3>Mixed symbols</h3>
+    <div class="rating" id="rating-mixed"></div>
+    <h3>Custom each symbol</h3>
+    <div class="rating" id="rating-custom"></div>
+    <h3>1 to 10 rating</h3>
+    <div class="rating" id="rating-default-1-to-10"></div>
+    <h3>5 to 10 rating</h3>
+    <div class="rating" id="rating-default-5-to-10"></div>
+    <h3>1 to 10 with step 2 (odd numbers)</h3>
+    <div class="rating" id="rating-default-1-to-10-step-2"></div>
+    <h3>10 to 1 with step -2 (odd numbers between [1..10] inverted order)</h3>
+    <div class="rating" id="rating-default-10-to-1-step--2"></div>
+    <h3>Rating with placeholder</h3>
+    <div class="rating" id="rating-placeholder"></div>
+
+    <script type="text/javascript">
+      var Rating = ReactRating;
+      var SVGIcon = React.createClass({
+        render: function () {
+          // Namespaced attributes are not supported in JSX. As a workaround
+          // we can use the dangerouslySetInnerHTML to set the innerHTML property.
+          // See https://github.com/facebook/react/issues/2250
+          var svg =
+            '<svg class="' + this.props.className + '">' +
+              '<use xlink:href="' + this.props.href + '"></use>' +
+            '</svg>';
+          return React.createElement('div', {
+            dangerouslySetInnerHTML: {__html: svg}
+          });
+        }
+      });
+      React.render(React.createElement(Rating, {
+        empty: React.createElement('span', {
+          className: 'icon-text'
+        }, '-'),
+        full: [
+          React.createElement('span', {
+            className: 'icon-text'
+          }, '1'),
+          React.createElement('span', {
+            className: 'icon-text'
+          }, '2'),
+          React.createElement('span', {
+            className: 'icon-text'
+          }, '3'),
+          React.createElement('span', {
+            className: 'icon-text'
+          }, '4'),
+          React.createElement('span', {
+            className: 'icon-text'
+          }, '5'),
+        ]
+      }), document.getElementById('rating-span'));
+      React.render(React.createElement(Rating, {
+        empty: React.createElement('img', {
+          src: 'assets/images/star-empty.png',
+          className: 'icon'
+        }),
+        full: React.createElement('img', {
+          src: 'assets/images/star-full.png',
+          className: 'icon'
+        })
+      }), document.getElementById('rating-img'));
+      React.render(React.createElement(Rating, {
+        empty: React.createElement(SVGIcon, {
+          href: '#icon-star-empty',
+          className: 'icon'
+        }),
+        full: React.createElement(SVGIcon, {
+          href: '#icon-star-full',
+          className: 'icon'
+        })
+      }), document.getElementById('rating-svg'));
+      React.render(React.createElement(Rating),
+        document.getElementById('rating-default'));
+      React.render(React.createElement(Rating, {
+        initialRate: 3,
+        readonly: true
+      }), document.getElementById('rating-default-readonly'));
+      React.render(React.createElement(Rating, {
+        initialRate: 2.5,
+        readonly: true
+      }), document.getElementById('rating-default-readonly-fractional'));
+      React.render(React.createElement(Rating, {
+        onChange: function (rate) {
+          alert(rate);
+        }
+      }), document.getElementById('rating-default-change'));
+      React.render(React.createElement(Rating, {
+        onRate: function (rate) {
+          document.getElementById('label-onrate').innerHTML = rate || '';
+        }
+      }), document.getElementById('rating-default-onrate'));
+      React.render(React.createElement(Rating, {
+        stop: 10
+      }), document.getElementById('rating-default-1-to-10'));
+      React.render(React.createElement(Rating, {
+        start: 4,
+        stop: 10
+      }), document.getElementById('rating-default-5-to-10'));
+      React.render(React.createElement(Rating, {
+        stop: 10,
+        step: 2
+      }), document.getElementById('rating-default-1-to-10-step-2'));
+      React.render(React.createElement(Rating, {
+        start: 11,
+        stop: 1,
+        step: -2
+      }), document.getElementById('rating-default-10-to-1-step--2'));
+      // Fontawesome.
+      React.render(React.createElement(Rating, {
+        empty: 'fa fa-star-o fa-2x',
+        full: 'fa fa-star fa-2x'
+      }), document.getElementById('rating-fontawesome-star'));
+      React.render(React.createElement(Rating, {
+        empty: 'fa fa-star-o fa-2x',
+        full: 'fa fa-star fa-2x',
+        fractions: 2
+      }), document.getElementById('rating-fractional'));
+      // Bootstrap.
+      React.render(React.createElement(Rating, {
+        empty: 'glyphicon glyphicon-heart-empty',
+        full: 'glyphicon glyphicon-heart'
+      }), document.getElementById('rating-bootstrap-heart'));
+      // Mixing symbols.
+      React.render(React.createElement(Rating, {
+        empty: ['fa fa-star-o fa-2x', 'fa fa-heart-o fa-2x'],
+        full: ['fa fa-star fa-2x', 'fa fa-heart fa-2x']
+      }), document.getElementById('rating-mixed'));
+      React.render(React.createElement(Rating, {
+        stop: 6,
+        empty: ['fa fa-star-o fa-2x low', 'fa fa-star-o fa-2x low',
+          'fa fa-star-o fa-2x medium', 'fa fa-star-o fa-2x medium',
+          'fa fa-star-o fa-2x high', 'fa fa-star-o fa-2x high'],
+        full: ['fa fa-star fa-2x low', 'fa fa-star fa-2x low',
+          'fa fa-star fa-2x medium', 'fa fa-star fa-2x medium',
+          'fa fa-star fa-2x high', 'fa fa-star fa-2x high'],
+      }), document.getElementById('rating-colored'));
+      React.render(React.createElement(Rating, {
+        stop: 4,
+        empty: 'fa fa-battery-empty fa-2x',
+        full: ['fa fa-battery-1 fa-2x', 'fa fa-battery-2 fa-2x',
+          'fa fa-battery-3 fa-2x', 'fa fa-battery-4 fa-2x']
+      }), document.getElementById('rating-custom'));
+      React.render(React.createElement(Rating, {
+        placeholderRate: 3.5,
+        empty: React.createElement('img', {
+          src: 'assets/images/star-grey.png',
+          className: 'icon'
+        }),
+        placeholder: React.createElement('img', {
+          src: 'assets/images/star-red.png',
+          className: 'icon'
+        }),
+        full: React.createElement('img', {
+          src: 'assets/images/star-yellow.png',
+          className: 'icon'
+        })
+      }), document.getElementById('rating-placeholder'));
+    </script>
+  </body>
+</html>

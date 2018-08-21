@@ -1,0 +1,51 @@
+version: '2'
+services:
+
+  backenddata:
+    image:  qkanban/repo:data_0_2
+    container_name: ct_backenddata
+    volumes:
+      - /data/db
+      - /data/app
+    command: --break-mongo
+
+  mongo:
+    image: mongo:3.2.0
+    container_name: ct_mongo
+    command: mongod --smallfiles
+    ports:
+      - 27017:27017
+    volumes_from:
+      - backenddata
+    networks:
+      - all
+    tty: true
+
+  backend:
+    image: qkanban/repo:api_0_5
+    container_name: ct_backend
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    depends_on:
+      - mongo
+    volumes_from:
+      - backenddata
+    networks:
+      - all
+    environment:
+      NODE_ENV: 'production'
+    tty: true
+
+  frontend:
+    image: qkanban/repo:frontend_0_5
+    container_name: ct_frontend
+    ports:
+        - "80:80"
+        - "443:443"
+    networks:
+      - all
+    tty: true
+
+networks:
+  all:

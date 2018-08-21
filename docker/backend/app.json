@@ -1,0 +1,46 @@
+{
+    "default":
+    {
+       "messages": {"genericErrorMessage": "Ops, foi mal, mas aconteceu algum erro que não soube tratar. Por favor, tente novamente."}
+    },
+
+    "production":
+    {
+        "environment": "production",
+        "restServer": {"port": 3000, "ipAddress": null},
+		"restServerHttps": {"port": 3001, "ipAddress": null, "key": "/usr/qkanban/app/config/HTTPS.key", "certificate":"/usr/qkanban/app/config/HTTPS.cert"},
+        "db": {"mongodb": "mongodb://mongo:27017/qkanban"},
+		"token": "Z3JU<y@d+gw^l:q.K[|g>HP>VrwZg7EV=YcW.Nr}Hs:em6]?S2)=eN6`-bB}MC'",
+		"ldap": {
+ 				"url": "ldap://ldap.forumsys.com:389",
+                "bindDn": "cn=read-only-admin,dc=example,dc=com",
+                "bindCredentials": "password",
+                "searchBase": "dc=example,dc=com",
+                "searchFilter": "uid={{username}}",
+				"searchFilterOutro": "sAMAccountName={{username}}",
+                "searchAttributes": "",
+				"givennameField": "cn",
+				"surnameField": "sn",
+				"emailField": "mail",
+				"loginField": "uid"
+		},
+		"directories":
+		{
+			"staticFolder":"/data/app/static/",
+			"baseFilePath": "/data/app/static/",
+			"tempUploadDir": "/data/app/tmp/restify",
+			"tempExportDir": "/data/app/tmp/export",
+			"imageDir": "/data/app/static/images",
+            "relativeImageDir": "/images/",
+			"attachmentDir": "/data/app/static/attachments",
+            "relativeAttachmentDir": "/attachments/"
+		},
+		"logger": {
+            "level": "info",
+			"api": "/data/app/logs/qkanban-api.log",
+			"app": "/data/app/logs/qkanban-app.log",
+			"exception": "/data/app/logs/qkanban-exceptions.log",
+			"audit": "/data/app/logs/qkanban-audit.log"
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+    "default":
+    {
+       "messages": {"genericErrorMessage": "Ops, foi mal, mas aconteceu algum erro que não soube tratar. Por favor, tente novamente."}
+    },
+ 	"production":
+    {
+        "environment": "production",
+        "restServer": {"port": 8080, "ipAddress": "127.0.0.1"},
+        "db": {"mongodb": "mongodb://admin:u8HBI3TpNPwe@127.3.122.130:27017/bravo"},
+		"directories":
+		{
+			"baseFilePath": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/data/",
+			"tempUploadDir": "/tmp/",
+			"imageDir": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/data/images",
+            "relativeImageDir": "http://bravo-qkanban.rhcloud.com:8080/images/",
+			"attachmentDir": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/data/attachments",
+            "relativeAttachmentDir": "/attachments/"
+		},
+		"logger": {
+            "level": "info",
+			"api": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/logs/qkanban-api.log",
+			"app": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/logs/qkanban-app.log",
+			"exception": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/logs/qkanban-exceptions.log",
+			"audit": "/var/lib/openshift/5763477d2d527163d90001d6/app-root/logs/qkanban-audit.log"
+		}
+	}
+}

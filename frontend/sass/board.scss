@@ -1,0 +1,599 @@
+
+
+
+@mixin top-border-radius($radius) {
+     -webkit-border-top-left-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+     -moz-border-radius-topleft: $radius;
+     -moz-border-radius-topright: 5px;
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+}
+
+@mixin border-radius($radius)
+{
+     -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+      border-radius: $radius;
+}
+
+
+
+@media print {
+    .kboard
+    {
+        font-family:Arial,sans-serif;
+        color:#141823;
+        //margin: 5px 5px 20px 5px;
+        margin: 5px 5px 2px 5px;
+        display: flex;
+        //min-height: 500px;
+        min-height: 400px;
+    }
+
+    .kboard
+    {
+        .cards
+        {
+            &.dropzone
+            {
+                background-color:inherit;
+                min-height: 0px !important;
+                margin-bottom: 15px;
+                ul, ul > li {position: relative;z-index:2;}
+                ul { min-height: 0px !important; margin: 0px; padding-left: 0px; list-style-type: none;}
+                li { display: relative; padding: 0px;z-index:2;}
+            }
+        }
+    }
+
+    .ui
+    {
+        &.card
+        {
+            &.kanbanCard { max-width: 138px; min-width: 128px;  border: 1px solid black;margin: 5px 15px 5px 5px; }
+        }
+    }
+}
+
+
+.laneTable
+{
+    height: 100%;
+    display: table;
+    width: 100%;
+}
+.subLaneRow
+{
+    width: 100%;
+    height: 100%;
+}
+.impedimentMoreLabel
+{
+    font-size: 30px !important;
+    background-color: transparent !important;
+    margin: -0.15em 0 0 -1.15em !important;
+    color: black !important;
+    position: absolute;
+    z-index: 100;
+    top: -1em;
+    left: 100%;
+}
+.kboard
+{
+  	font-family:Arial,sans-serif;
+	color:#141823;
+    //margin: 5px 5px 20px 5px;
+    margin: 5px 5px 2px 5px;
+    display: flex;
+    //min-height: 500px;
+    min-height: 400px;
+    .wipLimitOverflow
+    {
+        background-color: #F08080 !important;
+    }
+    .subLanes
+    {
+        display: flex;
+        height: 100%;
+        &.horizontal
+        {
+            flex-direction: row;
+            align-content: stretch;
+            align-items: stretch;
+        }
+        &.vertical
+        {
+            flex-direction: column;
+        }
+    }
+    .lanes
+    {
+        display: flex;
+        &.collapsed
+        {
+            background-color:transparent;
+            &.horizontal
+            {
+                max-width:34px;
+            }
+            &.vertical
+            {
+                width: 100%;
+            }
+            vertical-align:top;
+        }
+        &.horizontal
+        {
+            flex-direction: row;
+            border-right: 4px solid #0C374d;
+            &.top
+            {
+                &.wipLimitNotOverflowInTopLane
+                {
+                    background-color: #cad0d6 !important;
+                    //background:url(/images/fundo.jpg)!important;
+                }
+                &.wipLimitNotOverflowSwimLane{background-color: white !important;}
+            }
+
+        }
+        &.vertical
+        {
+            flex-direction: column;
+            &.notTop
+            {
+                &.leaf
+                {
+                    &.first
+                    {
+                        display: -webkit-box;
+                    }
+                    &.middle
+                    {
+                        display: -webkit-box;
+                    }
+
+                }
+            }
+        }
+        &.last
+        {
+            &.notTop
+            {
+                width: 100%;
+                border-right: 0px solid black;
+            }
+            &.vertical
+            {
+                //height: 100%;
+            }
+        }
+    }
+    .lane
+    {
+        .header
+        {
+            font-weight: bold;
+        }
+        .wipLimitOverflow
+        {
+            .header
+            {
+                color:red !important;
+                text-transform:uppercase;
+            }
+        }
+        &.last
+        {
+            &.leaf
+            {
+                width: 100%;
+            }
+            &.vertical
+            {
+                height: 100%;
+            }
+        }
+        &.vertical
+        {
+            &.collapsed
+            {
+                .header
+                {
+                    background-color: #ddd !important;
+                    .plus { opacity: 1 !important; font-weight: bold; }
+                    width: 100%;
+                }
+            }
+        }
+        &.horizontal
+        {
+            &.swimLaneCollapsed
+            {
+             	min-width:30px;
+            	width:30px;
+                background-color:inherit;
+                box-shadow:0 1px 0 #323231;
+                margin-right: 5px;
+                height: 100%;
+                .title { top:5px; width:300px; margin-left:5px; overflow:hidden; position:relative; color:#393b34; text-align:left; }
+                .swimLaneTitle { top:-20px; width:300px; overflow:hidden; position:relative; color:#393b34; text-align:left; }
+                .numberOfCardInLane { text-align:center; margin-top:10px; display:block; }
+                .header {width:30px;}
+
+            }
+            &.collapsed
+            {
+             	min-width:30px;
+            	width:30px;
+                background-color:#ddd;
+                box-shadow:0 1px 0 #323231;
+                margin-right: 5px;
+                height: 100%;
+                .title { top:5px; width:300px; margin-left:5px; overflow:hidden; position:relative; color:#393b34; text-align:left; }
+                .swimLaneTitle { top:-20px; width:300px; overflow:hidden; position:relative; color:#393b34; text-align:left; }
+                .numberOfCardInLane { text-align:center; margin-top:10px; display:block; }
+                .header {width:30px;}
+            }
+        }
+        &.expandable
+        {
+            .header
+            {
+                &.showBoard
+                {
+                    max-height: 30px !important;
+                    display: table-row !important;
+                    height: 28px !important;
+                }
+                &.editLayout
+                {
+                    max-height: 30px !important;
+                    display: table-row !important;
+                    height: 30px !important;
+                }
+            }
+        }
+        &.level1
+        {
+            .header
+            {
+                @include top-border-radius(0px); background:#fff; font-weight: bold; .title{font-family: cursive !important;}
+                //@include top-border-radius(0px); background:inherit; font-weight: bold; .title{font-family: cursive !important;}
+                .ui.horizontal.list
+                {
+                    border-bottom: 2px solid black;
+                }
+            }
+        }
+        &.level2
+        {
+            //TODO: colcoar para herdar o fundo somente se for horizontal e vertical manter fundo branco, cuidado pois na primeira tentativa nao funcionou, pois este era herdado para os niveis inferirores
+            //E quadro com muita profundidade estava dando flick de ficar diminuindo e aumentando por conta da opacidade
+            //.header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:inherit; .title{font-family: cursive !important;} }
+            //.header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:#fff; .title{font-family: cursive !important;} }
+           .header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:#abc; .title{font-family: cursive !important;} }
+
+        }
+        &.level3
+        {
+            .header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:#D5E7C2;.title{font-family: cursive !important;} }
+
+        }
+        &.level4
+        {
+            .header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:rgb(253,176, 188); .title{font-family: cursive !important;} }
+        }
+        &.level5
+        {
+            .header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:#E5DED6; .title{font-family: cursive !important;} }
+        }
+        &.level6
+        {
+            .header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:#E6EAFF; .title{font-family: cursive !important;} }
+        }
+
+
+        &.level7
+        {
+            .header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:#abc; .title{font-family: cursive !important;} }
+        }
+        &.level8
+        {
+            .header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:#D5E7C2;.title{font-family: cursive !important;} }
+
+        }
+        &.level9
+        {
+            .header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:rgb(253,176, 188); .title{font-family: cursive !important;} }
+        }
+        &.level10
+        {
+            .header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:#E5DED6; .title{font-family: cursive !important;} }
+        }
+        &.level11
+        {
+            .header { @include top-border-radius(0px); overflow: hidden; padding: 0px; margin:0px; background-color:#E6EAFF; .title{font-family: cursive !important;} }
+        }
+
+        &.level3,&.level4,&.level5,&.level6,&.level7,&.level8,&.level9,&.level10,&.level11
+        {
+            .header
+            {
+                .title { font-size: 13px; background-color: inherit; }
+            }
+        }
+        .ui.cards:after, .ui.card:after
+        {
+            height: 100%;
+        }
+    }
+}
+
+.kboard
+{
+    .metricLayoutLaneMenu
+    {
+        background-color: transparent !important;
+        &:hover
+        {
+            .notSelected
+            {
+                opacity: 1
+            }
+        }
+        .notSelected
+        {
+            opacity: 0.5;
+            &:hover
+            {
+                opacity: 1
+            }
+        }
+    }
+
+    .boardLayoutLaneMenu
+    {
+        opacity: 0.5;
+        &:hover
+        {
+            opacity: 1
+        }
+    }
+}
+
+.kboard
+{
+    .cards
+    {
+        .highlightCard
+        {
+            .ui
+            {
+                &.card { border: 2px solid red; }
+            }
+        }
+        &.dropzone
+        {
+            background-color:inherit;
+            min-height: 130px;
+            margin-bottom: 15px;
+            ul, ul > li {position: relative;z-index:2;}
+            ul { min-height: 100px; margin: 0px; padding-left: 0px; list-style-type: none;}
+            li { display: relative; padding: 0px;z-index:2;}
+        }
+    }
+}
+
+.ui
+{
+    &.card
+    {
+        &.kanbanCard
+        {
+            max-width: 138px; min-width: 128px;  box-shadow: 2px 2px 2px 0px black, 2px 2px 0px 0px gray;margin: 5px 15px 5px 5px;
+            &.externalCard { -webkit-box-shadow: 3px 3px 5px 0px rgba(72,82,194,1); -moz-box-shadow: 3px 3px 5px 0px rgba(72,82,194,1); box-shadow: 3px 3px 5px 0px rgba(72,82,194,1) !important;}
+        }
+
+    }
+}
+.templateCard
+{
+    .kanbanCard
+    {
+        box-shadow: 0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5 !important
+    }
+    .cardItem
+    {
+        .iconInfos.ui.horizontal.list
+        {
+            display: inline-flex;
+        }
+        .iconInfos.ui.horizontal.list>.item:first-child
+        {
+            padding-top: 3px !important;
+        }
+        .iconInfos.ui.horizontal.list
+        {
+            .iconInfo
+            {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+.cardItem
+{
+    box-shadow: 1px 2px 3px #999;
+    .properties
+    {
+        margin:2px 0px 0px 0px !important;
+        min-height: 15px;
+    }
+    .planningDates
+    {
+        margin-right:2px;
+        margin-bottom:2px;
+        text-align: right;
+        height: 22px;
+        .date
+        {
+            font-size:10px !important;
+            padding:3px !important;
+            font-weight:normal;
+            &.yellow
+            {
+                color:Black !important;
+                background-color: #e6ec88 !important;
+            }
+            &.green
+            {
+                font-weight: normal;
+                background-color:transparent !important;
+                color: gray !important;
+            }
+            &.red
+            {
+                color:white !important;
+                background-color: #ff7f6d !important;
+            }
+            > sup
+            {
+                margin-left:1px;
+            }
+        }
+    }
+    .iconInfos
+    {
+        /*height:31px;*/
+        margin-left: 2px !important;
+        &.ui.horizontal.list>.item
+        {
+            margin-left: 0px;
+            opacity: 0.7;
+        }
+    }
+    .size
+    {
+        font-size:8px;
+    }
+    .externalIdHeader
+    {
+        background-color:#010101;
+        color:white;
+        font-family: monospace;
+        max-height: 16px;
+        line-height: 1.5;
+        font-size:10px;
+        padding:0px;
+        -webkit-border-radius: 4px 4px 0px 0px;
+        -moz-border-radius: 4px 4px 0px 4px;
+        border-radius: 4px 4px 0px 0px;
+        > a
+        {
+            color:white;
+            text-decoration:none;
+            margin-left:5px;
+        }
+    }
+    .progress
+    {
+        background-color:black;
+        margin: 0px !important;
+        height:5px !important;
+        border-radius: 0px;
+        .progress-bar
+        {
+            font-size: 10px;
+            color:white;
+            font-weight:bold;
+            /*line-height: 1.2;*/
+        }
+        .bar
+        {
+            height: 5px !important;
+            border-radius: 0px;
+        }
+    }
+    .users
+    {
+        margin:inherit;
+        margin:0px !important;
+        &.ui.avatar.image
+        {
+            margin-left:2px !important;
+            margin-right:2px !important;
+            margin-bottom:0px !important;
+            margin-top:5px !important;
+        }
+        .user
+        {
+            border-radius: 0px !important;
+            font-size: 0.82857143rem !important;
+            &.not
+            {
+                &.working
+                {
+                    opacity:0.5;
+                    border:1px solid gray;
+                }
+            }
+            &.working
+            {
+                opacity:1.0;
+                border:2px solid black;
+            }
+        }
+    }
+    .tag
+    {
+        //color:#3C6478;
+        color:#3C6478;
+        font-size: 11px;
+        text-align: left;
+        margin: 0px;
+        padding: 0px;
+        line-height: 1;
+        font-weight: normal;
+        > span
+        {
+            margin-right: 3px;
+        }
+    }
+    .content
+    {
+        padding:0px;
+        margin-left:2px;
+        .description
+        {
+            vertical-align: middle;
+            word-wrap: break-word;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .popover-content
+        {
+            margin-top:5px;
+        }
+
+    }
+}
+
+.k-card-blockIcon
+{
+    &.ui.corner.label
+    {
+        .icon
+        {
+            position: initial !important;
+        }
+    }
+}
+
+.laneHeaderInfo.ui.horizontal.list>.item
+{
+    margin: 1px;
+    font-size: 11px;
+}

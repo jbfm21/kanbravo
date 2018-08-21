@@ -1,0 +1,21 @@
+#rodar primeiro gulp run-prd
+#backend
+
+cd /d d:\kb
+docker build  -t="qkanban/repo:api_0_1" -f .\docker\backend\Dockerfile .
+
+#frontend
+robocopy D:\kb\tmp\deploy\frontend  D:\kb\docker\frontend\app /E /XD attachments /XD images
+cd /d D:\kb\docker\frontend
+docker build  -t="qkanban/repo:frontend_0_1"  .
+
+#docker-compose
+cd /d D:\kb\docker
+docker-compose up -d
+
+#docker-push
+docker login
+cd /d D:\kb\docker
+docker push qkanban/repo:api_0_1
+docker push qkanban/repo:frontend_0_1
+docker push qkanban/repo:data_0_1

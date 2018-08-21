@@ -1,0 +1,6 @@
+/*https://babeljs.io/blog/2015/06/07/react-on-es6-plus*/
+{
+  "plugins": ["transform-object-rest-spread", "syntax-export-extensions", "transform-react-display-name", "syntax-object-rest-spread", "transform-decorators-legacy", "transform-class-properties"],
+  "presets": ["es2015", "react"]
+}
+
